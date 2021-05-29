@@ -1,0 +1,9 @@
+﻿<mat-toolbar color="primary" *ngIf="user">
+  <button mat-button routerLink="/home" routerLinkActive="active">Home</button>
+  <span class="menu-spacer"></span>
+  <button mat-button (click)="onLogout()" title="Logout">Logout</button>
+
+</mat-toolbar>
+<div class="content">
+  <router-outlet></router-outlet>
+</div>

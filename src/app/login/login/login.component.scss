@@ -1,0 +1,17 @@
+.signin-content {
+  padding: 60px 1rem;
+
+  & mat-card {
+    max-width: 400px;
+    margin: 2em auto;
+    text-align: center;
+
+    & mat-form-field {
+      width: 100%;
+    }
+
+    .register-btn {
+      margin: 0.3rem;
+    }
+  }
+}

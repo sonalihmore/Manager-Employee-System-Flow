@@ -1,0 +1,13 @@
+.register-content {
+  padding: 3rem;
+
+  & mat-card {
+    max-width: 400px;
+    margin: auto;
+    text-align: center;
+  }
+
+  & mat-form-field {
+    width: 100%;
+  }
+}

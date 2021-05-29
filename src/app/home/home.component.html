@@ -1,0 +1,75 @@
+<div fxLayout="row wrap" fxFlex="100">
+
+  <mat-toolbar fxLayout="row" class="mt-12 mb-12">
+    <span class="menu-spacer"></span>
+    <button mat-raised-button fxLayoutAlign="end" title="Add Employee" class="save-button mat-primary" aria-label="SAVE"
+      (click)="openDialog('Add',null)">
+      Add Employee
+    </button>
+  </mat-toolbar>
+
+
+  <div class="table-container mat-elevation-z0" fxFlex="100">
+    <div class="table-content">
+      <mat-progress-bar *ngIf="isLoading" mode="indeterminate"></mat-progress-bar>
+
+      <mat-table #table [dataSource]="dataSource">
+        <ng-container matColumnDef="firstName">
+          <mat-header-cell *matHeaderCellDef>First Name</mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            {{row.firstName}}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="lastName">
+          <mat-header-cell *matHeaderCellDef>Last Name</mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            {{row.lastName}}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="dateOfBirth">
+          <mat-header-cell *matHeaderCellDef>Birth Date</mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            {{row.dateOfBirth | date}}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="mobile">
+          <mat-header-cell *matHeaderCellDef>Mobile Number</mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            {{row.mobile}}
+          </mat-cell>
+        </ng-container>
+        <ng-container matColumnDef="address">
+          <mat-header-cell *matHeaderCellDef>Address</mat-header-cell>
+          <mat-cell *matCellDef="let row" title=" {{row.address}}">
+            {{row.address}}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="city">
+          <mat-header-cell *matHeaderCellDef>City</mat-header-cell>
+          <mat-cell *matCellDef="let row">
+            {{row.city}}
+          </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Action">
+          <mat-header-cell *matHeaderCellDef fxLayoutAlign="center center"> Actions </mat-header-cell>
+          <mat-cell *matCellDef="let element">
+            <div fxLayoutAlign="center center">
+
+              <button mat-icon-button color="accent" (click)="openDialog('Edit',element)">
+                <mat-icon aria-label="Edit">edit</mat-icon>
+              </button>
+              <button mat-icon-button color="accent" (click)="deleteEmployee(element)">
+                <mat-icon aria-label="Delete">delete</mat-icon>
+              </button>
+
+            </div>
+          </mat-cell>
+        </ng-container>
+        <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+        <mat-row *matRowDef="let row; columns: displayedColumns"></mat-row>
+      </mat-table>
+    </div>
+  </div>
+</div>

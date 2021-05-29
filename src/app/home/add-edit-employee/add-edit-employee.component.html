@@ -1,0 +1,45 @@
+<div fxFlex="100" fxLayout="column" class="dialog">
+  <div matDialogTitle class="m-0 p-0">
+    <div fxFlex fxLayout="row" fxLayoutAlign="space-between center">
+      <span class="title dialog-title">{{setTitle}} Employee</span>
+
+    </div>
+  </div>
+
+  <form name="jobForm" [formGroup]="myForm" fxLayout="column" fxFlex="100">
+    <div class="form-container" fxLayout="column" fxFlex="100">
+      <mat-form-field>
+        <input matInput placeholder="First Name" formControlName="firstName" required />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="Last Name" formControlName="lastName" required />
+      </mat-form-field>
+      <mat-form-field>
+
+        <input matInput [matDatepicker]="picker" placeholder="Birth Date" formControlName="dateOfBirth" readonly>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Mobile Number" formControlName="mobile" required />
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput placeholder="City" formControlName="city" required />
+      </mat-form-field>
+
+      <mat-form-field>
+        <input matInput placeholder="Address" formControlName="address" required />
+      </mat-form-field>
+
+
+      <div mat-dialog-actions class="m-0 p-8" fxLayout="row" fxLayoutAlign="space-between center">
+        <button mat-raised-button class="save-button mat-primary" aria-label="SAVE" (click)="doSave()">
+          Save
+        </button>
+        <button mat-button (click)="dialogRef.close();">Cancel</button>
+
+      </div>
+    </div>
+  </form>
+</div>

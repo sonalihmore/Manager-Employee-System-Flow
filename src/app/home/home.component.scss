@@ -1,0 +1,9 @@
+.menu-spacer {
+  flex: 1 1 auto;
+}
+
+.table-content {
+  max-height: calc(100vh - 250px) !important;
+  position: relative;
+  overflow: auto;
+}
