@@ -66,18 +66,17 @@ addEmployees(employee: Employee) {
   localStorage.setItem('Employees', JSON.stringify(employees));
     this.messageBox.showMessage("Employee added successfully");
 }
-updateEmployee(employee: Employee,empId?:any) {
-  let employees = JSON.parse(localStorage.getItem('Employees'));
-  let editObjindex=employees.findIndex(res=> res.id==empId)
-  if(editObjindex != -1){
-    this.employees[editObjindex]=employee;
-    this.employees=[...this.employees];
+updateEmployee(oldEmp:any, employee: Employee){
+  let emps = JSON.parse(localStorage.getItem('Employees'));
+    for(let i = 0; i <emps.length; i++) {
+     if(emps[i].id == oldEmp.id) {
+       emps[i] = employee;
+     }
   }
-  localStorage.setItem('Employees', JSON.stringify(this.employees));
-  this.messageBox.showMessage(
-    "Employee updated successfully"
-  );
-}
+     localStorage.setItem('Employees', JSON.stringify(emps));
+     this.messageBox.showMessage(
+          "Employee updated successfully");
+  }
 
 deleteEmployee(mobile?:any) {
   let employees = JSON.parse(localStorage.getItem('Employees'));

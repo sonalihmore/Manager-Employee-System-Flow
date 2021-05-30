@@ -41,7 +41,18 @@ export class HomeComponent implements OnInit {
       );
       this.dialogRef.afterClosed().subscribe((response:any) => {
        if (!response) return;
-        this.loadData();
+       if(openMode==="Add"){
+        this.dataSource.unshift(response);
+        this.dataSource=[...this.dataSource]
+      }else if(openMode==="Edit"){
+        (response)
+         this.loadData()
+          // let editObjindex=this.dataSource.findIndex(res=> res.id==response.id)
+          // if(editObjindex != -1){
+          //   this.dataSource[editObjindex]=response;
+          //   this.dataSource=[...this.dataSource];
+          // }
+       }
       });
   }
 

@@ -48,15 +48,12 @@ export class AddEditEmployeeComponent implements OnInit {
     }
   }
   addEmployee(){
-
     this.managerService.addEmployees(this.myForm.value);
     this.dialogRef.close(this.myForm.value);
-
   }
   updateEmployee(){
-    this.managerService.updateEmployee(this.myForm.value,this.selectedEmployee.id)
+    this.managerService.updateEmployee(this.selectedEmployee,this.myForm.value)
     this.dialogRef.close(this.myForm.value);
-
   }
 
 }
