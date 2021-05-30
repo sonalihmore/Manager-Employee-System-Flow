@@ -57,10 +57,10 @@
           <mat-cell *matCellDef="let element">
             <div fxLayoutAlign="center center">
 
-              <button mat-icon-button color="accent" (click)="openDialog('Edit',element)">
+              <button mat-icon-button class="mat-primary" (click)="openDialog('Edit',element)">
                 <mat-icon aria-label="Edit">edit</mat-icon>
               </button>
-              <button mat-icon-button color="accent" (click)="deleteEmployee(element)">
+              <button mat-icon-button class="mat-primary" (click)="deleteEmployee(element)">
                 <mat-icon aria-label="Delete">delete</mat-icon>
               </button>
 
