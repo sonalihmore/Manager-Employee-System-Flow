@@ -18,7 +18,7 @@ export class HomeComponent implements OnInit {
   dialogRef: any;
   isLoading:boolean=false;
   constructor(private managerService:ManagerService,
-    public dialog: MatDialog,private messageBox:MessageBoxService) { }
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.loadData()
@@ -30,6 +30,7 @@ export class HomeComponent implements OnInit {
 
   }
   openDialog(openMode:any,selected:any){
+    console.log(selected)
     this.dialogRef = this.dialog.open(AddEditEmployeeComponent,
       {height: '500px',
        width: '600px',
@@ -46,7 +47,7 @@ export class HomeComponent implements OnInit {
         this.dataSource=[...this.dataSource]
       }else if(openMode==="Edit"){
         (response)
-         this.loadData()
+          this.loadData()
           // let editObjindex=this.dataSource.findIndex(res=> res.id==response.id)
           // if(editObjindex != -1){
           //   this.dataSource[editObjindex]=response;

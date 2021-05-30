@@ -41,8 +41,7 @@ export class LoginComponent implements OnInit {
                   this.messageBox.showMessage("Login successfully!")
               },
               error: error => {
-                // this.messageBox.showMessage(error);
-                this.messageBox.showError('Email or password is incorrect');
+                // this.messageBox.showError(error)
               }
           });
   }

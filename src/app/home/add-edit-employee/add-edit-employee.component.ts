@@ -21,7 +21,6 @@ export class AddEditEmployeeComponent implements OnInit {
       if(this.selectedEmployee==null){
         this.selectedEmployee={};
       }
-
     }
 
   ngOnInit(): void {
@@ -47,10 +46,13 @@ export class AddEditEmployeeComponent implements OnInit {
       this.updateEmployee();
     }
   }
+  //TODo Add new employee
   addEmployee(){
-    this.managerService.addEmployees(this.myForm.value);
+    this.managerService.addEmployee(this.myForm.value);
     this.dialogRef.close(this.myForm.value);
   }
+
+    //TODo update employee
   updateEmployee(){
     this.managerService.updateEmployee(this.selectedEmployee,this.myForm.value)
     this.dialogRef.close(this.myForm.value);

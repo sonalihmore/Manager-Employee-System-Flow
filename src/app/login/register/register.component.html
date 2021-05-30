@@ -34,7 +34,8 @@
           </mat-error>
         </mat-form-field>
         <mat-form-field>
-          <input matInput [matDatepicker]="picker" placeholder="Birth Date" formControlName="dateOfBirth" readonly>
+          <input matInput [matDatepicker]="picker" placeholder="Birth Date" formControlName="dateOfBirth" readonly
+            required>
           <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
           <mat-datepicker #picker></mat-datepicker>
           <mat-error>
@@ -43,7 +44,8 @@
         </mat-form-field>
         <mat-form-field>
           <mat-label>Address</mat-label>
-          <textarea matInput name="address" rows="2" placeholder="Address" formControlName="address"></textarea>
+          <textarea matInput name="address" rows="2" placeholder="Address" formControlName="address"
+            required></textarea>
           <mat-error>
             Address is required
           </mat-error>

@@ -41,7 +41,6 @@ export class RegisterComponent implements OnInit {
                     this.messageBox.showMessage("Registration done successfully")
                 },
                 error: error => {
-                  this.messageBox.showError(error)
                 }
       });
     }
